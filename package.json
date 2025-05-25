@@ -1,0 +1,22 @@
+{
+  "name": "web-a.s.r",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server src --port=3000",
+    "build:css": "postcss src/css/main.css -o public/css/main.min.css",
+    "lint": "eslint src/js/**/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^10.1.0"
+  }
+}
