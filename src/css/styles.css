@@ -212,6 +212,7 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
 .audio-controls {
     position: fixed;
     bottom: 0;
