@@ -3,11 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEB-A.S.R</title>
+    <title>Aurora Sonds Records | Electronic Music Label</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>Mi Proyecto</h1>
+    <header>
+    <div class="logo">A.S.R.</div>
+    <nav class="nav-links">
+        <a href="lanzamientos.html" target="_blank">Lanzamientos</a>
+        <a href="artistas.html" target="_blank">Artistas</a>
+        <a href="nosotros.html" target="_blank">Nosotros</a>
+        <a href="contacto.html" target="_blank">Contacto</a>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Música Sin Límites</h1>
+            <p>Descubre los últimos lanzamientos de electrónica global</p>
+            <button class="cta-button" onclick="showModal()">Únete al Newsletter</button>
+        </div>
+    </section>
+
+    <section class="releases" id="releases">
+        <h2>Nuevos Lanzamientos</h2>
+        <div class="grid">
+            <!-- Tarjeta 1 -->
+            <div class="release-card">
+                <img src="https://source.unsplash.com/random/800x800/?album1" alt="Summer Vibes">
+                <div class="card-content">
+                    <h3>Summer Vibes</h3>
+                    <p>DJ Nexus</p>
+                    <audio class="audio-player" 
+                          src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3"></audio>
+                </div>
+                <div class="play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="release-card">
+                <img src="https://source.unsplash.com/random/800x800/?album2" alt="Neon Nights">
+                <div class="card-content">
+                    <h3>Neon Nights</h3>
+                    <p>Electra Beat</p>
+                    <audio class="audio-player" 
+                          src="https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3"></audio>
+                </div>
+                <div class="play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="release-card">
+                <img src="https://source.unsplash.com/random/800x800/?album3" alt="Cosmic Flow">
+                <div class="card-content">
+                    <h3>Cosmic Flow</h3>
+                    <p>Stellar Sound</p>
+                    <audio class="audio-player" 
+                          src="https://assets.mixkit.co/music/preview/mixkit-hazy-after-hours-132.mp3"></audio>
+                </div>
+                <div class="play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>Recibe los últimos lanzamientos</h2>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Tu mejor correo" required>
+            <button type="submit">Suscribirse</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="logo">A.R.S.</div>
+        <div class="social-links">
+            <a href="https://spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>© 2024 Nexus Records. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>¡Gracias por unirte!</h2>
+            <p>Te hemos enviado un correo de confirmación.</p>
+            <button onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Controles de audio flotantes -->
+    <div class="audio-controls">
+        <button class="play-pause"><i class="fas fa-play"></i></button>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <span class="time">0:00</span>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 </html>
