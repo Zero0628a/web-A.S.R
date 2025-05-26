@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sobre A.S.R. | El Futuro de la Música</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  :root {
+    --asr-primary: #00FFF7;
+    --asr-secondary: #FF003C;
+    --dark-bg: #0a0a0a;
+    --card-bg: #151515;
+    --text-light: #e0e0e0;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  .about-section {
+    font-family: 'Poppins', sans-serif;
+    background: var(--dark-bg);
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, 
+      rgba(0, 255, 247, 0.05) 0%, 
+      rgba(255, 0, 60, 0.03) 50%, 
+      transparent 100%);
+    z-index: 1;
+  }
+
+  .asr-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 800px;
+    opacity: 0.03;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1200px;
+  }
+
+  .main-title {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, var(--asr-primary), var(--asr-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1.1;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .timeline-container {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 4rem;
+    padding: 8rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .timeline-line {
+    background: linear-gradient(180deg, 
+      transparent 0%, 
+      var(--asr-primary) 30%, 
+      var(--asr-secondary) 70%, 
+      transparent 100%);
+    width: 2px;
+    position: relative;
+  }
+
+  .milestone {
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 20px;
+    margin: 2rem 0;
+    position: relative;
+    transition: transform 0.4s ease;
+  }
+
+  .milestone:hover {
+    transform: translateX(10px);
+  }
+
+  .milestone::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--asr-primary);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .left-milestone::before {
+    right: -40px;
+  }
+
+  .right-milestone::before {
+    left: -40px;
+  }
+
+  .milestone-year {
+    font-size: 2rem;
+    color: var(--asr-primary);
+    margin-bottom: 1rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .team-member {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .member-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid var(--asr-primary);
+  }
+
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .team-member:hover img {
+    transform: scale(1.1);
+  }
+
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding: 6rem 2rem;
+    background: linear-gradient(45deg, 
+      rgba(0, 255, 247, 0.05) 0%, 
+      rgba(255, 0, 60, 0.03) 100%);
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .stat-number {
+    font-size: 4rem;
+    background: linear-gradient(45deg, var(--asr-primary), var(--asr-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .main-title {
+      font-size: 3rem;
+    }
+
+    .timeline-container {
+      grid-template-columns: 1fr;
+    }
+
+    .timeline-line {
+      display: none;
+    }
+
+    .milestone::before {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="about-section">
+  <div class="hero-container">
+    <div class="hero-bg"></div>
+    <img src="asr-logo.svg" alt="A.S.R. Logo" class="asr-logo">
+    <div class="hero-content">
+      <h1 class="main-title">Armada Sound Records</h1>
+      <p class="tagline">Donde la innovación se encuentra con la tradición musical. Fusionando el legado de dos gigantes para crear el futuro del sonido electrónico.</p>
+    </div>
+  </div>
+
+  <div class="timeline-container">
+    <div class="milestone left-milestone">
+      <div class="milestone-year">2024</div>
+      <h3>Nacimiento de una Leyenda</h3>
+      <p>Fusión estratégica entre Armada Music y Spinnin' Records, creando la superdiscográfica líder en música electrónica.</p>
+    </div>
+
+    <div class="timeline-line"></div>
+
+    <div class="milestone right-milestone">
+      <div class="milestone-year">2025</div>
+      <h3>Revolución Tecnológica</h3>
+      <p>Lanzamiento de nuestra plataforma AI de producción musical integrada con blockchain para derechos de autor.</p>
+    </div>
+  </div>
+
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-number">150M+</div>
+      <p>Streams Diarios</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">40+</div>
+      <p>Premios Internacionales</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">500+</div>
+      <p>Artistas Exclusivos</p>
+    </div>
+  </div>
+
+  <div class="team-grid">
+    <div class="team-member">
+      <div class="member-photo">
+        <img src="ceo.jpg" alt="CEO">
+      </div>
+      <h3>Alexander Kron</h3>
+      <p>CEO & Fundador</p>
+    </div>
+    <div class="team-member">
+      <div class="member-photo">
+        <img src="cto.jpg" alt="CTO">
+      </div>
+      <h3>Sarah Vinter</h3>
+      <p>Directora Creativa</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Animación de números
+  const stats = document.querySelectorAll('.stat-number');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateNumber(entry.target);
+      }
+    });
+  });
+
+  stats.forEach(stat => observer.observe(stat));
+
+  function animateNumber(element) {
+    const finalNumber = parseInt(element.innerText.replace('+', ''));
+    let current = 0;
+    const increment = finalNumber / 100;
+    
+    const updateNumber = () => {
+      if(current < finalNumber) {
+        current += increment;
+        element.innerText = Math.ceil(current) + '+';
+        requestAnimationFrame(updateNumber);
+      }
+    }
+    
+    updateNumber();
+  }
+
+  // Efecto parallax
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const asrLogo = document.querySelector('.asr-logo');
+    asrLogo.style.transform = `translate(-50%, -${50 + (scrolled * 0.1)}%)`;
+  });
+</script>
+
+</body>
+</html>

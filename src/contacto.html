@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contacto | Armada x Spinnin'</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  :root {
+    --armada-accent: #00fff7;
+    --spinnin-red: #FF003C;
+    --dark-bg: #0a0a0a;
+    --input-bg: #1a1a1a;
+    --text-light: #e0e0e0;
+  }
+
+  html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+  .contact-section {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, var(--dark-bg) 30%, #160003 100%);
+    color: var(--text-light);
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="30" fill="rgba(255,255,255,0.03)" font-family="Arial">ARMADA●SPINNIN</text></svg>');
+    pointer-events: none;
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .contact-branding {
+    position: relative;
+    padding-right: 4rem;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .logos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .brand-logo {
+    width: 220px;
+    filter: drop-shadow(0 0 15px rgba(0, 255, 247, 0.2));
+  }
+
+  .spinnin-logo {
+    filter: drop-shadow(0 0 15px rgba(255, 0, 60, 0.2));
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .info-item:hover {
+    transform: translateX(10px);
+  }
+
+  .info-icon {
+    font-size: 1.8rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--input-bg);
+  }
+
+  .armada-icon {
+    color: var(--armada-accent);
+    border: 1px solid rgba(0, 255, 247, 0.3);
+  }
+
+  .spinnin-icon {
+    color: var(--spinnin-red);
+    border: 1px solid rgba(255, 0, 60, 0.3);
+  }
+
+  .contact-form {
+    position: relative;
+    background: rgba(10, 10, 10, 0.8);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .form-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, var(--armada-accent), var(--spinnin-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .form-group {
+    margin-bottom: 2rem;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 1rem;
+    background: var(--input-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--armada-accent);
+    box-shadow: 0 0 15px rgba(0, 255, 247, 0.2);
+  }
+
+  .form-input.spinnin-focus:focus {
+    border-color: var(--spinnin-red);
+    box-shadow: 0 0 15px rgba(255, 0, 60, 0.2);
+  }
+
+  textarea.form-input {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  .submit-btn {
+    background: linear-gradient(45deg, var(--armada-accent), var(--spinnin-red));
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 0, 60, 0.3);
+  }
+
+  @media (max-width: 1200px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-branding {
+      border-right: none;
+      padding-right: 0;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-section {
+      padding: 4rem 1.5rem;
+    }
+    
+    .form-title {
+      font-size: 2rem;
+    }
+    
+    .brand-logo {
+      width: 180px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-branding">
+      <div class="logos-container">
+        <img src="armada-logo.png" alt="Armada Music" class="brand-logo">
+        <img src="spinnin-logo.png" alt="Spinnin' Records" class="brand-logo spinnin-logo">
+      </div>
+      
+      <div class="contact-info">
+        <div class="info-item">
+          <div class="info-icon armada-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <h3>Oficinas Principales</h3>
+            <p>Armada: Amsterdam, NL<br>Spinnin': Hilversum, NL</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon spinnin-icon">
+            <i class="fas fa-headphones"></i>
+          </div>
+          <div>
+            <h3>Contacto Directo</h3>
+            <p>Demo Submissions: demos@spinninrecords.com<br>A&R: ar@armadamusic.com</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon armada-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <h3>Teléfono</h3>
+            <p>+31 20 670 1881 (Armada)<br>+31 35 621 0020 (Spinnin')</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2 class="form-title">Contacto Conjunto</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <input type="text" class="form-input" placeholder="Nombre" required>
+        </div>
+        
+        <div class="form-group">
+          <input type="email" class="form-input spinnin-focus" placeholder="Email" required>
+        </div>
+        
+        <div class="form-group">
+          <select class="form-input" required>
+            <option value="">Selecciona la compañía</option>
+            <option>Armada Music</option>
+            <option>Spinnin' Records</option>
+            <option>Ambas</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <textarea class="form-input" placeholder="Tu mensaje..." required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Efecto de interacción del formulario
+  document.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('focus', function() {
+      this.parentElement.style.transform = 'scale(1.02)';
+    });
+    
+    input.addEventListener('blur', function() {
+      this.parentElement.style.transform = 'scale(1)';
+    });
+  });
+
+  // Animación de envío del formulario
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const btn = this.querySelector('button');
+    btn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+      btn.innerHTML = '¡Mensaje Enviado! <i class="fas fa-check"></i>';
+      setTimeout(() => {
+        btn.innerHTML = 'Enviar Mensaje';
+        btn.disabled = false;
+        this.reset();
+      }, 2000);
+    }, 1500);
+  });
+
+  // Efecto parallax en el fondo
+  window.addEventListener('mousemove', function(e) {
+    const section = document.querySelector('.contact-section');
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    section.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+  });
+</script>
+
+</body>
+</html>
