@@ -32,21 +32,43 @@ header {
     -webkit-text-fill-color: transparent;
 }
 
+.logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 2rem;
 }
 
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
+.nav-links button {
+    color: #fff; /* Color del texto */
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    position: relative;
 }
 
-.nav-links a:hover {
-    color: #00ffff;
+.nav-links button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #99045b; /* Color del subrayado */
+    transition: width 0.3s ease;
 }
 
+.nav-links button:hover::after {
+    width: 100%;
+}
 /* Hero Section */
 .hero {
     height: 100vh;
